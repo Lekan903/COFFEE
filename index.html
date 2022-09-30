@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFFEE</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            color: white;
+           justify-content: space-evenly;
+           position: sticky;
+           top: 0;
+        }
+        .brandtitle img{
+            margin: .5rem;
+            border-radius: 50px;
+        }
+        .navbar-links ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+           
+        }
+        .navbar-links li{
+            list-style: none;
+        }
+        .navbar-links li a{
+            text-decoration: none;
+            color: white;
+            padding: 1rem;
+            display: block;
+            
+        }
+        .navbar-links li:hover{
+            background-color: black;
+        }
+        .toggle-button{
+            position: absolute;
+            top: .75rem;
+            right: 1rem;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 31px;
+            height: 21px;
+        }
+        .toggle-button .bar{
+            height: 5px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        @media (max-width: 800px){
+            .toggle-button {
+                display: flex;
+            }
+            .navbar-links{
+               display:none;
+               width: 100%;
+            }
+            .navbar{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar-links ul{
+                width: 100%;
+                flex-direction: column;
+            }
+            .navbar-links li{
+                text-align: center;
+            }
+            .navbar-links li a{
+                padding: .5rem 1rem;
+            }
+            .navbar-links.active{
+                display: flex;
+            }
+            .sg{
+                visibility: hidden;
+                
+            }
+        }
+    
+
+
+        .one{
+            background: url(coff2.jfif) center fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            height: 600px;
+        }
+        .one h1{
+            color: white;
+            font-size: 50px;
+           
+        }
+        .one h3{
+            color: gold;
+            font-size: 20px;
+        }
+        .on{
+            margin: 10px;
+            display: block;
+            padding: 8rem;
+        }
+        @media (max-width: 1000px){
+            .one{
+                height: 100%;
+            }
+            .on{
+                text-align: center;
+            }
+            .one h1{
+                font-size: h1;
+            }
+            .one h3{
+                font-size: h3;
+            }
+        }
+
+
+
+        .two{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+            place-items: center;
+            color: white;
+
+        }
+        .tw h1{
+            text-align: center;
+            color: white;
+        }
+        .tw span{
+            color: gold;
+        }
+        .wood {
+            border: 1px solid gold;
+            padding:4px 15px;
+            background-color: gold;
+            color: white;
+            text-decoration: none;
+            list-style: none;
+        }
+        .co{
+            font-size: 20px;
+        }
+        @media (max-width: 900px){
+            .two{
+                display: inline;
+                text-align: center;
+                font-size: 27px;
+            }
+            .two img{
+                width: 100%;
+               justify-content: center; 
+            }
+        }
+
+
+
+
+
+        .four{
+            color: white;
+            text-align: center;
+        }
+        .four span{
+            color: gold;
+        }
+        .menu{
+        color: white;
+        display: grid; 
+          grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+         place-items: center;
+         padding: 20px;
+            
+        }
+        .menu strong{
+            font-size: 20px;
+            text-decoration: line-through;
+        }
+        .me{
+            border: 1px solid gray;
+            width: 300px;
+            text-align: center;
+            padding: 10px;
+            margin: 6px
+        }
+        .me img{
+            border-radius: 50px;
+        }
+
+
+
+
+
+        .five{
+        color: white;
+        display: grid; 
+         grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+         place-items: center;
+         padding: 20px;
+         text-align: center;
+        }
+        .sv svg{
+            margin-left: 50px;
+            border: 1px solid gray;
+            width: 40px;
+
+        }
+        .omo{
+            border: 1px solid gray;
+            width: 400px;
+            text-align: center;
+            padding: 10px;
+            margin: 1px
+        }
+        .omo strong{
+            text-decoration: line-through;
+            font-size: 16px;
+        }
+        @media (max-width: 900px){
+            .five{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+                place-items: center;
+                margin: 30px;
+            }
+            .omo{
+                width: 400px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brandtitle"><img src="coff1.jfif" width="50px" height="50px"></div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+              </div>
+ 
+        <div class="sg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg> 
+        </div>
+  
+    </nav>
+
+<!-- home ss -->
+<div class="one">
+<div class="on" >
+    <h1>FRESH COFFEE IN <br>
+        THE MORING
+    </h1>
+    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis sapientedolore <br>
+    quibusdam aspernatur? Maiores error doloribus sequi eveniet. Saepe, 
+    </h3>
+    <span class="wood"><a href="https://wa.link/60t7r7">HIRE ME</a> </span> 
+</div>
+</div>
+<!-- home end -->
+
+
+<!-- About ss -->
+<div class="tw">
+    <h1><span>ABOUT</span>US</h1>
+</div>
+<div class="two">
+    <div>
+        <img src="coff3.jfif" width="600px">
+    </div>
+    <div class="co">
+            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
+                Veritatis mollitia blanditiis amet labore vero suscipit, <br>
+                 impedit quisquam omnis provident, perspiciatis repellendus? <br>
+                Aperiam autem magnam reprehenderit eos. Quam, esse. <br>
+                <br>
+                <br>
+                Veritatis mollitia blanditiis amet labore vero suscipit, <br>
+                 impedit quisquam omnis provident, perspiciatis repellendus? <br>
+                Aperiam autem magnam reprehenderit eos. Quam, esse.
+            </h3>
+    
+    <span class="wood"><a href="https://wa.link/60t7r7">HIRE ME</a> </span> 
+</div>
+</div>
+</div>
+<!-- about end -->
+
+<!-- menu -->
+<div class="four">
+    <h1>OUR <span>MENU</span></h1>
+</div>
+<div class="menu">
+<div class="me">
+    <img src="coff5.jfif" width="100px" height="100px">
+    <h3>Tasty And Healthy</h3>
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    <span class="wood">Add To Cart</span> 
+</div>
+<div class="me">
+    <img src="coff5.jfif" width="100px" height="100px">
+    <h3>Tasty And Healthy</h3>
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    <span class="wood">Add To Cart </span> 
+</div>
+<div class="me">
+    <img src="coff5.jfif" width="100px" height="100px">
+    <h3>Tasty And Healthy</h3>
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    <span class="wood">Add To Cart</span> 
+</div>
+<div class="me">
+    <img src="coff5.jfif" width="100px" height="100px">
+    <h3>Tasty And Healthy</h3>
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    <span class="wood">Add To Cart</span> 
+</div>
+<div class="me">
+    <img src="coff5.jfif" width="100px" height="100px">
+    <h3>Tasty And Healthy</h3>
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    <span class="wood">Add To Cart</span> 
+</div>
+<div class="me">
+    <img src="coff5.jfif" width="100px" height="100px">
+    <h3>Tasty And Healthy</h3>
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    <span class="wood">Add To Cart </span> 
+</div>
+</div>
+<!-- menu end -->
+
+<!-- Proudct ss -->
+<div class="four">
+    <h1>LATEST<span>PRODUCT</span></h1>
+</div>
+<div class="five">
+    <div class="omo">
+        <div class="sv">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    </div>
+    <img src="coff2.jfif" width="300px" height="100%">
+    <h3>Fresh Coffee</h3>
+    <img src="star1.png" width="70px" height="50px">
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    </div>
+    <div class="omo">
+        <div class="sv">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    </div>
+    <img src="coff2.jfif" width="300px" height="100%">
+    <h3>Fresh Coffee</h3>
+    <img src="star1.png" width="70px" height="50px">
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    </div>
+    <div class="omo">
+        <div class="sv">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+     </svg> 
+    </div>
+    <img src="coff2.jfif" width="300px" height="100%">
+    <h3>Fresh Coffee</h3>
+    <img src="star1.png" width="70px" height="50px">
+    <h2>$15.99 <strong>$20.99</strong></h2>
+    </div>
+</div>
+    
+    
+
+
+
+
+
+
+
+<!-- product end -->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const toggleButton = document.getElementsByClassName("toggle-button")[0]
+        const navbarLinks = document.getElementsByClassName("navbar-links")[0]
+
+        toggleButton.addEventListener('click', function() {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+</body>
+</html>
